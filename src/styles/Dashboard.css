@@ -1,0 +1,21 @@
+.dashboard-table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+  }
+  
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .dashboard-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .dashboard-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }  
