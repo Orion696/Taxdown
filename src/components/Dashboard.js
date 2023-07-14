@@ -11,7 +11,7 @@ function Dashboard({ taxes, fetchTaxes }) {
 
   return (
     <div>
-      <h2 className="dashboard-title">Dashboard</h2>
+      <h1 className="dashboard-title">Dashboard</h1>
       <h3 className="taxes-title">Impuestos Activos</h3>
       <table className="dashboard-table">
         <thead>
@@ -19,7 +19,7 @@ function Dashboard({ taxes, fetchTaxes }) {
             <th>ID</th>
             <th>Nombre</th>
             <th>Año</th>
-            <th>Acción</th> {/* Nueva columna para los botones */}
+            <th>Acción</th>
           </tr>
         </thead>
         <tbody>

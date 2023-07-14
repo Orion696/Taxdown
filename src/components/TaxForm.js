@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { fetchFormFieldsRequest, submitFormRequest } from '../redux/actions/formActions';
+import '../styles/TaxForm.css';
+
 
 function TaxForm({ dispatch, fields }) {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [formValues, setFormValues] = React.useState({});
   
     useEffect(() => {
@@ -18,14 +21,17 @@ function TaxForm({ dispatch, fields }) {
       });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      dispatch(submitFormRequest(formValues));
+      await dispatch(submitFormRequest(formValues));
+      setFormValues({});
+      window.alert('Formulario enviado correctamente');
+      navigate('/dashboard');
     };
   
     return (
-      <div>
-        <h2>Formulario de impuestos para el impuesto {id}</h2>
+      <div className="form-container">
+        <h2 className="form-title">Formulario para el impuesto {id}</h2>
         <form onSubmit={handleSubmit}>
           {fields.map(field => (
             <div key={field.id}>
@@ -34,9 +40,10 @@ function TaxForm({ dispatch, fields }) {
                 name={field.id}
                 type={field.type}
                 placeholder={field.placeholder}
-                maxLength={field.maxLength || undefined}
+                maxLength={20}
                 value={formValues[field.id] || ''}
                 onChange={handleChange}
+                required
               />
             </div>
           ))}

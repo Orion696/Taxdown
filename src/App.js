@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import Dashboard from './components/Dashboard';
-import TaxForm from './components/TaxForm'; // Asegúrate de importar el nuevo componente aquí
+import TaxForm from './components/TaxForm';
 
 function App() {
     return (

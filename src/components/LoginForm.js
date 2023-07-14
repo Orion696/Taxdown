@@ -22,25 +22,31 @@ function LoginForm({ login }) {
 
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <label>
-        Usuario:
-        <input
-          type="text"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Contraseña:
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit">Iniciar sesión</button>
-    </form>
+    <div className="container">
+      <div className="text-container">
+        <h1 className="taxdown-title">Taxdown</h1>
+        <p className="taxdown-text">Te ayudamos a gestionar tus impuestos de manera fácil, rapido y segura</p>
+      </div>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label>
+          Usuario:
+          <input
+            type="text"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+        </label>
+        <label>
+          Contraseña:
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+        </label>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+    </div>
   );
 }
 

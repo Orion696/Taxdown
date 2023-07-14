@@ -8,6 +8,31 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top right, #ffe1d0, rgb(212, 234, 241));
+    margin-top: 160px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .taxdown-title {
+    font-size: 3rem;
+    color: #0fd48e;
+    margin-left: 40px;
+  }
+
+  .taxdown-text{
+   margin-left: 40PX;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #3d3a62;
+  }
+  
+  .text-container {
+    margin-right: 20px;
   }
   
   .login-form input {

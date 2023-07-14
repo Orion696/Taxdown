@@ -3,10 +3,20 @@
     {
       "id": "1",
       "name": "Temporada de impuestos 2021",
-      "year": "2021"
+      "year": "2023"
     },
     {
       "id": "2",
+      "name": "Temporada de impuestos 2020",
+      "year": "2022"
+    },
+    {
+      "id": "3",
+      "name": "Temporada de impuestos 2020",
+      "year": "2021"
+    },
+    {
+      "id": "4",
       "name": "Temporada de impuestos 2020",
       "year": "2020"
     }
@@ -18,21 +28,21 @@
         {
           "id": "name",
           "label": "Nombre",
-          "placeholder": "Tu primer nombre",
+          "placeholder": "Nombre",
           "type": "text",
           "maxLength": 20
         },
         {
           "id": "surname",
           "label": "Apellido",
-          "placeholder": "Tu apellido",
+          "placeholder": "Apellido",
           "type": "text",
           "maxLength": 40
         },
         {
           "id": "age",
           "label": "Edad",
-          "placeholder": "Tu edad",
+          "placeholder": "Edad",
           "type": "number"
         }
       ]
@@ -183,6 +193,30 @@
       "surname": "Lopez",
       "age": "52",
       "id": "HnV3mB1"
+    },
+    {
+      "name": "Ramiro",
+      "surname": "Lopez",
+      "age": "59",
+      "id": "WumFZrs"
+    },
+    {
+      "name": "Pruebaadasdadadsasd",
+      "surname": "asdaddddddddddddddddddddddddddddddddd",
+      "age": "33",
+      "id": "3-2kfLj"
+    },
+    {
+      "name": "Andres david",
+      "surname": "Lopez Arias",
+      "age": "333333333333333",
+      "id": "laKXAJF"
+    },
+    {
+      "name": "Andres",
+      "surname": "Lopez",
+      "age": "25",
+      "id": "46-BT01"
     }
   ]
 }
