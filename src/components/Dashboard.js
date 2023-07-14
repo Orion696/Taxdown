@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'; 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchTaxes } from '../redux/actions/taxActions';
-import '../styles/Dashboard.css';  // Import the CSS
+import '../styles/Dashboard.css';
 
 function Dashboard({ taxes, fetchTaxes }) {
   useEffect(() => {
@@ -10,14 +11,15 @@ function Dashboard({ taxes, fetchTaxes }) {
 
   return (
     <div>
-      <h2>Dashboard</h2>
-      <h3>Impuestos Activos</h3>
+      <h2 className="dashboard-title">Dashboard</h2>
+      <h3 className="taxes-title">Impuestos Activos</h3>
       <table className="dashboard-table">
         <thead>
           <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Año</th>
+            <th>Acción</th> {/* Nueva columna para los botones */}
           </tr>
         </thead>
         <tbody>
@@ -26,6 +28,9 @@ function Dashboard({ taxes, fetchTaxes }) {
               <td>{tax.id}</td>
               <td>{tax.name}</td>
               <td>{tax.year}</td>
+              <td>
+                <Link to={`/taxes/${tax.id}/form`}>Agregar entradas</Link>
+              </td>
             </tr>
           ))}
         </tbody>

@@ -1,14 +1,188 @@
 {
   "taxes": [
-      {
-          "id": "1",
-          "name": "Temporada de impuestos 2021",
-          "year": "2021"
+    {
+      "id": "1",
+      "name": "Temporada de impuestos 2021",
+      "year": "2021"
+    },
+    {
+      "id": "2",
+      "name": "Temporada de impuestos 2020",
+      "year": "2020"
+    }
+  ],
+  "forms": [
+    {
+      "id": "1",
+      "inputFields": [
+        {
+          "id": "name",
+          "label": "Nombre",
+          "placeholder": "Tu primer nombre",
+          "type": "text",
+          "maxLength": 20
+        },
+        {
+          "id": "surname",
+          "label": "Apellido",
+          "placeholder": "Tu apellido",
+          "type": "text",
+          "maxLength": 40
+        },
+        {
+          "id": "age",
+          "label": "Edad",
+          "placeholder": "Tu edad",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "inputFields": [
+        {
+          "id": "name",
+          "label": "Nombre",
+          "placeholder": "Tu primer nombre",
+          "type": "text",
+          "maxLength": 20
+        },
+        {
+          "id": "surname",
+          "label": "Apellido",
+          "placeholder": "Tu apellido",
+          "type": "text",
+          "maxLength": 40
+        },
+        {
+          "id": "age",
+          "label": "Edad",
+          "placeholder": "Tu edad",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "taxId": "1",
+      "values": {
+        "name": "juliana",
+        "surname": "Mejia",
+        "age": "22"
       },
-      {
-          "id": "2",
-          "name": "Temporada de impuestos 2020",
-          "year": "2020"
-      }
+      "id": "RvFqM2Z"
+    },
+    {
+      "taxId": "1",
+      "values": {
+        "name": "Andres",
+        "surname": "Lopez",
+        "age": "33"
+      },
+      "id": "uBEjE00"
+    },
+    {
+      "taxId": "1",
+      "values": {
+        "name": "Daniela",
+        "surname": "Mejia",
+        "age": "25"
+      },
+      "id": "XJ1TAhc"
+    },
+    {
+      "taxId": "1",
+      "values": {},
+      "id": "NbVviHT"
+    },
+    {
+      "taxId": "1",
+      "values": {
+        "name": "Andres",
+        "surname": "Lopez",
+        "age": "33"
+      },
+      "id": "tkZybMi"
+    },
+    {
+      "taxId": "1",
+      "values": {
+        "name": "Andres",
+        "surname": "Lopez",
+        "age": "33"
+      },
+      "id": "HGJJ6lY"
+    },
+    {
+      "taxId": "2",
+      "values": {
+        "name": "Andres",
+        "surname": "Mejia",
+        "age": "36"
+      },
+      "id": "Pdy7XU3"
+    },
+    {
+      "taxId": "2",
+      "values": {
+        "name": "Andres",
+        "surname": "Mejia",
+        "age": "36"
+      },
+      "id": "_NqicYT"
+    },
+    {
+      "taxId": "1",
+      "formData": {
+        "name": "Andres",
+        "surname": "López",
+        "age": "33"
+      },
+      "id": "I1CcPes"
+    },
+    {
+      "taxId": "1",
+      "formData": {
+        "name": "Andres",
+        "surname": "López",
+        "age": "33"
+      },
+      "id": "DAj51Sr"
+    },
+    {
+      "taxId": "1",
+      "formData": {
+        "name": "Andres",
+        "surname": "lopera",
+        "age": "31"
+      },
+      "id": "j7Ud4bQ"
+    },
+    {
+      "taxId": "1",
+      "formData": {
+        "name": "Andres",
+        "surname": "sanchez",
+        "age": "25"
+      },
+      "id": "MK4Cv-V"
+    },
+    {
+      "taxId": {
+        "name": "juliana arias",
+        "surname": "lopera",
+        "age": "29"
+      },
+      "id": "ANtdihF"
+    },
+    {
+      "1": "",
+      "id": "lw6p1nL"
+    },
+    {
+      "name": "Ramiro",
+      "surname": "Lopez",
+      "age": "52",
+      "id": "HnV3mB1"
+    }
   ]
 }
