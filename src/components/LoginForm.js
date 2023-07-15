@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import '../styles/LoginForm.css';  // Import the CSS
+import '../styles/LoginForm.css';
 
 function LoginForm({ login }) {
   const [username, setUsername] = useState("");
