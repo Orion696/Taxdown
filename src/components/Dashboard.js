@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTaxes } from '../redux/actions/taxActions';
@@ -19,7 +19,7 @@ function Dashboard({ taxes, fetchTaxes }) {
             <th>ID</th>
             <th>Nombre</th>
             <th>Año</th>
-            <th>Acción</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +30,7 @@ function Dashboard({ taxes, fetchTaxes }) {
               <td>{tax.year}</td>
               <td>
                 <Link to={`/taxes/${tax.id}/form`}>Agregar entradas</Link>
+                <Link to={`/taxes/${tax.id}/submissions`}>Ver envíos</Link>
               </td>
             </tr>
           ))}

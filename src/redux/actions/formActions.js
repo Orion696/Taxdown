@@ -46,3 +46,26 @@ export const submitFormFailure = error => {
     payload: error,
   }
 }
+
+export const ADD_FORM_SUBMISSION = 'ADD_FORM_SUBMISSION';
+export const DELETE_FORM_SUBMISSION = 'DELETE_FORM_SUBMISSION';
+
+export const addFormSubmission = (taxId, formData) => {
+  return {
+    type: ADD_FORM_SUBMISSION,
+    payload: {
+      taxId,
+      formData
+    }
+  }
+}
+
+export const deleteFormSubmission = (taxId, submissionId) => {
+  return {
+    type: DELETE_FORM_SUBMISSION,
+    payload: {
+      taxId,
+      submissionId
+    }
+  }
+}

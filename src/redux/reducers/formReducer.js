@@ -4,7 +4,9 @@ import {
   FETCH_FORM_FIELDS_FAILURE,
   SUBMIT_FORM_REQUEST,
   SUBMIT_FORM_SUCCESS,
-  SUBMIT_FORM_FAILURE
+  SUBMIT_FORM_FAILURE,
+  ADD_FORM_SUBMISSION,
+  DELETE_FORM_SUBMISSION
 } from '../actions/formActions';
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   isLoading: false,
   error: null,
   formSubmitSuccess: false,
+  submissions: {}
 };
 
 const formReducer = (state = initialState, action) => {
@@ -28,10 +31,30 @@ const formReducer = (state = initialState, action) => {
       return { ...state, isLoading: false, formSubmitSuccess: true };
     case SUBMIT_FORM_FAILURE:
       return { ...state, isLoading: false, error: action.payload };
+    case ADD_FORM_SUBMISSION:
+      return {
+        ...state,
+        submissions: {
+          ...state.submissions,
+          [action.payload.taxId]: [
+            ...(state.submissions[action.payload.taxId] || []),
+            action.payload.formData
+          ]
+        }
+      };
+    case DELETE_FORM_SUBMISSION:
+      return {
+        ...state,
+        submissions: {
+          ...state.submissions,
+          [action.payload.taxId]: state.submissions[action.payload.taxId].filter(
+            submission => submission.id !== action.payload.submissionId
+          )
+        }
+      };
     default:
       return state;
   }
 };
 
 export default formReducer;
-  
