@@ -29,8 +29,10 @@ function Dashboard({ taxes, fetchTaxes }) {
               <td>{tax.name}</td>
               <td>{tax.year}</td>
               <td>
-                <Link to={`/taxes/${tax.id}/form`}>Agregar entradas</Link>
-                <Link to={`/taxes/${tax.id}/submissions`}>Ver envíos</Link>
+                <div className="link-container">
+                  <Link to={`/taxes/${tax.id}/form`}>Agregar entradas</Link>
+                  <Link to={`/taxes/${tax.id}/submissions`}>Ver envíos</Link>
+                </div>
               </td>
             </tr>
           ))}

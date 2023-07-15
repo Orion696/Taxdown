@@ -20,7 +20,7 @@ function Submissions() {
 
   return (
     <div className="submissions-container">
-      <h1>Envíos de formulario</h1>
+      <h1 className="submissions-title">Envíos de formulario</h1>
       <div className="filter-container">
         <label>Nombre:</label>
         <input
