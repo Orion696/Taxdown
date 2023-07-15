@@ -49,23 +49,41 @@ export const submitFormFailure = error => {
 
 export const ADD_FORM_SUBMISSION = 'ADD_FORM_SUBMISSION';
 export const DELETE_FORM_SUBMISSION = 'DELETE_FORM_SUBMISSION';
+export const EDIT_FORM_SUBMISSION = 'EDIT_FORM_SUBMISSION';
 
 export const addFormSubmission = (taxId, formData) => {
+  const id = new Date().getTime().toString();
   return {
     type: ADD_FORM_SUBMISSION,
     payload: {
       taxId,
-      formData
+      formData: {
+        ...formData,
+        id: id,
+      },
     }
   }
 }
 
+
 export const deleteFormSubmission = (taxId, submissionId) => {
+  console.log('Deleting submission with id: ', submissionId);
   return {
     type: DELETE_FORM_SUBMISSION,
     payload: {
       taxId,
       submissionId
+    }
+  }
+}
+
+export const editFormSubmission = (taxId, submissionId, updatedData) => {
+  return {
+    type: EDIT_FORM_SUBMISSION,
+    payload: {
+      taxId,
+      submissionId,
+      updatedData
     }
   }
 }

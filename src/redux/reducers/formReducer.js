@@ -6,7 +6,8 @@ import {
   SUBMIT_FORM_SUCCESS,
   SUBMIT_FORM_FAILURE,
   ADD_FORM_SUBMISSION,
-  DELETE_FORM_SUBMISSION
+  DELETE_FORM_SUBMISSION,
+  EDIT_FORM_SUBMISSION
 } from '../actions/formActions';
 
 const initialState = {
@@ -42,19 +43,31 @@ const formReducer = (state = initialState, action) => {
           ]
         }
       };
-    case DELETE_FORM_SUBMISSION:
-      return {
-        ...state,
-        submissions: {
-          ...state.submissions,
-          [action.payload.taxId]: state.submissions[action.payload.taxId].filter(
-            submission => submission.id !== action.payload.submissionId
-          )
-        }
-      };
-    default:
-      return state;
-  }
-};
-
-export default formReducer;
+      case DELETE_FORM_SUBMISSION:
+        return {
+          ...state,
+          submissions: {
+            ...state.submissions,
+            [action.payload.taxId]: state.submissions[action.payload.taxId].filter(
+              submission => submission.id !== action.payload.submissionId
+            )
+          }
+        };
+  
+      case EDIT_FORM_SUBMISSION:
+        return {
+          ...state,
+          submissions: {
+            ...state.submissions,
+            [action.payload.taxId]: state.submissions[action.payload.taxId].map(
+              submission => submission.id === action.payload.submissionId ? {...submission, ...action.payload.updatedData} : submission
+            )
+          }
+        };
+  
+      default:
+        return state;
+    }
+  };
+  
+  export default formReducer;

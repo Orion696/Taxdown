@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import '../styles/Submissions.css';
+import { deleteFormSubmission, editFormSubmission } from '../redux/actions/formActions';
 
 function Submissions() {
   const { id } = useParams();
   const submissions = useSelector(state => state.form.submissions[id] || []);
+  const dispatch = useDispatch();
+
   const [nameFilter, setNameFilter] = useState('');
   const [surnameFilter, setSurnameFilter] = useState('');
   const [ageFilter, setAgeFilter] = useState('');
+  const [editing, setEditing] = useState(false);
+  const [currentSubmission, setCurrentSubmission] = useState(null);
 
   const filteredSubmissions = submissions.filter(submission => {
     const nameMatch = !nameFilter || submission.name.toLowerCase().includes(nameFilter.toLowerCase());
@@ -17,6 +22,21 @@ function Submissions() {
 
     return nameMatch && surnameMatch && ageMatch;
   });
+
+  const handleDelete = (submissionId) => {
+    dispatch(deleteFormSubmission(id, submissionId));
+  };
+
+  const handleEdit = (submission) => {
+    setEditing(true);
+    setCurrentSubmission(submission);
+  };
+
+  const handleUpdate = () => {
+    dispatch(editFormSubmission(id, currentSubmission.id, currentSubmission));
+    setEditing(false);
+    setCurrentSubmission(null);
+  };
 
   return (
     <div className="submissions-container">
@@ -48,6 +68,7 @@ function Submissions() {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Edad</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -57,8 +78,37 @@ function Submissions() {
               <td>{submission.name}</td>
               <td>{submission.surname}</td>
               <td>{submission.age}</td>
+              <td>
+                <button onClick={() => handleEdit(submission)}>Editar</button>
+                <button onClick={() => handleDelete(submission.id)}>Eliminar</button>
+              </td>
             </tr>
           ))}
+          {editing && (
+            <tr>
+              <td colSpan={5}>
+                <label>Nombre:</label>
+                <input
+                  type="text"
+                  value={currentSubmission.name}
+                  onChange={e => setCurrentSubmission({...currentSubmission, name: e.target.value})}
+                />
+                <label>Apellido:</label>
+                <input
+                  type="text"
+                  value={currentSubmission.surname}
+                  onChange={e => setCurrentSubmission({...currentSubmission, surname: e.target.value})}
+                />
+                <label>Edad:</label>
+                <input
+                  type="text"
+                  value={currentSubmission.age}
+                  onChange={e => setCurrentSubmission({...currentSubmission, age: e.target.value})}
+                />
+                <button onClick={handleUpdate}>Guardar</button>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
       <Link to="/dashboard" className="dashboard-link">Dashboard</Link>
