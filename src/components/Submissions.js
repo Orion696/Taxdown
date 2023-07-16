@@ -39,7 +39,7 @@ function Submissions() {
   };
 
   return (
-    <div className="submissions-container">
+    <div>
       <h1 className="submissions-title">Envíos de formulario</h1>
       <div className="filter-container">
         <label>Nombre:</label>
@@ -47,21 +47,24 @@ function Submissions() {
           type="text"
           value={nameFilter}
           onChange={e => setNameFilter(e.target.value)}
+          className="small-input"
         />
         <label>Apellido:</label>
         <input
           type="text"
           value={surnameFilter}
           onChange={e => setSurnameFilter(e.target.value)}
+          className="small-input"
         />
         <label>Edad:</label>
         <input
           type="text"
           value={ageFilter}
           onChange={e => setAgeFilter(e.target.value)}
+          className="small-input"
         />
       </div>
-      <table>
+      <table className="sub-table">
         <thead>
           <tr>
             <th>Envío</th>
@@ -79,36 +82,44 @@ function Submissions() {
               <td>{submission.surname}</td>
               <td>{submission.age}</td>
               <td>
-                <button onClick={() => handleEdit(submission)}>Editar</button>
-                <button onClick={() => handleDelete(submission.id)}>Eliminar</button>
+                <div className="container-edit">
+                  <button className="btn btn-editar" onClick={() => handleEdit(submission)}>Editar</button>
+                  <button className="btn btn-eliminar" onClick={() => handleDelete(submission.id)}>Eliminar</button>
+                </div>
               </td>
             </tr>
           ))}
           {editing && (
-            <tr>
-              <td colSpan={5}>
-                <label>Nombre:</label>
-                <input
-                  type="text"
-                  value={currentSubmission.name}
-                  onChange={e => setCurrentSubmission({...currentSubmission, name: e.target.value})}
-                />
-                <label>Apellido:</label>
-                <input
-                  type="text"
-                  value={currentSubmission.surname}
-                  onChange={e => setCurrentSubmission({...currentSubmission, surname: e.target.value})}
-                />
-                <label>Edad:</label>
-                <input
-                  type="text"
-                  value={currentSubmission.age}
-                  onChange={e => setCurrentSubmission({...currentSubmission, age: e.target.value})}
-                />
-                <button onClick={handleUpdate}>Guardar</button>
-              </td>
-            </tr>
-          )}
+  <tr>
+    <td colSpan={5}>
+      <form className="edit-form">
+        <label>Nombre:</label>
+        <input
+          type="text"
+          value={currentSubmission.name}
+          onChange={e => setCurrentSubmission({ ...currentSubmission, name: e.target.value })}
+        />
+        <label>Apellido:</label>
+        <input
+          type="text"
+          value={currentSubmission.surname}
+          onChange={e => setCurrentSubmission({ ...currentSubmission, surname: e.target.value })}
+        />
+        <label>Edad:</label>
+        <input
+          type="text"
+          value={currentSubmission.age}
+          onChange={e => setCurrentSubmission({ ...currentSubmission, age: e.target.value })}
+        />
+        <div className="button-group">
+          <button className="btn btn-save" onClick={handleUpdate}>Guardar</button>
+          <button className="btn btn-cancel" onClick={() => { setEditing(false); setCurrentSubmission(null); }}>Cancelar</button>
+        </div>
+      </form>
+    </td>
+  </tr>
+)}
+
         </tbody>
       </table>
       <Link to="/dashboard" className="dashboard-link">Dashboard</Link>
