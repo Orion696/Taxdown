@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
+import Modal from 'react-modal';
 import '../styles/Submissions.css';
 import { deleteFormSubmission, editFormSubmission } from '../redux/actions/formActions';
 
@@ -34,6 +35,11 @@ function Submissions() {
 
   const handleUpdate = () => {
     dispatch(editFormSubmission(id, currentSubmission.id, currentSubmission));
+    setEditing(false);
+    setCurrentSubmission(null);
+  };
+
+  const handleCloseModal = () => {
     setEditing(false);
     setCurrentSubmission(null);
   };
@@ -89,40 +95,43 @@ function Submissions() {
               </td>
             </tr>
           ))}
-          {editing && (
-  <tr>
-    <td colSpan={5}>
-      <form className="edit-form">
-        <label>Nombre:</label>
-        <input
-          type="text"
-          value={currentSubmission.name}
-          onChange={e => setCurrentSubmission({ ...currentSubmission, name: e.target.value })}
-        />
-        <label>Apellido:</label>
-        <input
-          type="text"
-          value={currentSubmission.surname}
-          onChange={e => setCurrentSubmission({ ...currentSubmission, surname: e.target.value })}
-        />
-        <label>Edad:</label>
-        <input
-          type="text"
-          value={currentSubmission.age}
-          onChange={e => setCurrentSubmission({ ...currentSubmission, age: e.target.value })}
-        />
-        <div className="button-group">
-          <button className="btn btn-save" onClick={handleUpdate}>Guardar</button>
-          <button className="btn btn-cancel" onClick={() => { setEditing(false); setCurrentSubmission(null); }}>Cancelar</button>
-        </div>
-      </form>
-    </td>
-  </tr>
-)}
-
         </tbody>
       </table>
       <Link to="/dashboard" className="dashboard-link">Dashboard</Link>
+
+      <Modal
+        isOpen={editing}
+        onRequestClose={handleCloseModal}
+        contentLabel="Editar Envío"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Editar Envío</h2>
+        <form className="edit-form">
+          <label>Nombre:</label>
+          <input
+            type="text"
+            value={currentSubmission?.name || ''}
+            onChange={e => setCurrentSubmission({ ...currentSubmission, name: e.target.value })}
+          />
+          <label>Apellido:</label>
+          <input
+            type="text"
+            value={currentSubmission?.surname || ''}
+            onChange={e => setCurrentSubmission({ ...currentSubmission, surname: e.target.value })}
+          />
+          <label>Edad:</label>
+          <input
+            type="text"
+            value={currentSubmission?.age || ''}
+            onChange={e => setCurrentSubmission({ ...currentSubmission, age: e.target.value })}
+          />
+          <div className="button-group">
+            <button className="btn btn-save" onClick={handleUpdate}>Guardar</button>
+            <button className="btn btn-cancel" onClick={handleCloseModal}>Cancelar</button>
+          </div>
+        </form>
+      </Modal>
     </div>
   );
 }
