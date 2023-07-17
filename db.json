@@ -53,212 +53,42 @@
         {
           "id": "name",
           "label": "Nombre",
-          "placeholder": "Tu primer nombre",
+          "placeholder": "Nombre",
           "type": "text",
           "maxLength": 20
         },
         {
           "id": "surname",
           "label": "Apellido",
-          "placeholder": "Tu apellido",
+          "placeholder": "Apellidos",
           "type": "text",
           "maxLength": 40
         },
         {
           "id": "age",
           "label": "Edad",
-          "placeholder": "Tu edad",
+          "placeholder": "Edad",
           "type": "number"
         }
       ]
     },
     {
-      "taxId": "1",
-      "values": {
-        "name": "juliana",
-        "surname": "Mejia",
-        "age": "22"
-      },
-      "id": "RvFqM2Z"
-    },
-    {
-      "taxId": "1",
-      "values": {
-        "name": "Andres",
-        "surname": "Lopez",
-        "age": "33"
-      },
-      "id": "uBEjE00"
-    },
-    {
-      "taxId": "1",
-      "values": {
-        "name": "Daniela",
-        "surname": "Mejia",
-        "age": "25"
-      },
-      "id": "XJ1TAhc"
-    },
-    {
-      "taxId": "1",
-      "values": {},
-      "id": "NbVviHT"
-    },
-    {
-      "taxId": "1",
-      "values": {
-        "name": "Andres",
-        "surname": "Lopez",
-        "age": "33"
-      },
-      "id": "tkZybMi"
-    },
-    {
-      "taxId": "1",
-      "values": {
-        "name": "Andres",
-        "surname": "Lopez",
-        "age": "33"
-      },
-      "id": "HGJJ6lY"
-    },
-    {
-      "taxId": "2",
-      "values": {
-        "name": "Andres",
-        "surname": "Mejia",
-        "age": "36"
-      },
-      "id": "Pdy7XU3"
-    },
-    {
-      "taxId": "2",
-      "values": {
-        "name": "Andres",
-        "surname": "Mejia",
-        "age": "36"
-      },
-      "id": "_NqicYT"
-    },
-    {
-      "taxId": "1",
-      "formData": {
-        "name": "Andres",
-        "surname": "López",
-        "age": "33"
-      },
-      "id": "I1CcPes"
-    },
-    {
-      "taxId": "1",
-      "formData": {
-        "name": "Andres",
-        "surname": "López",
-        "age": "33"
-      },
-      "id": "DAj51Sr"
-    },
-    {
-      "taxId": "1",
-      "formData": {
-        "name": "Andres",
-        "surname": "lopera",
-        "age": "31"
-      },
-      "id": "j7Ud4bQ"
-    },
-    {
-      "taxId": "1",
-      "formData": {
-        "name": "Andres",
-        "surname": "sanchez",
-        "age": "25"
-      },
-      "id": "MK4Cv-V"
-    },
-    {
-      "taxId": {
-        "name": "juliana arias",
-        "surname": "lopera",
-        "age": "29"
-      },
-      "id": "ANtdihF"
-    },
-    {
-      "1": "",
-      "id": "lw6p1nL"
-    },
-    {
-      "name": "Ramiro",
-      "surname": "Lopez",
-      "age": "52",
-      "id": "HnV3mB1"
-    },
-    {
-      "name": "Ramiro",
-      "surname": "Lopez",
-      "age": "59",
-      "id": "WumFZrs"
-    },
-    {
-      "name": "Pruebaadasdadadsasd",
-      "surname": "asdaddddddddddddddddddddddddddddddddd",
-      "age": "33",
-      "id": "3-2kfLj"
-    },
-    {
-      "name": "Andres david",
-      "surname": "Lopez Arias",
-      "age": "333333333333333",
-      "id": "laKXAJF"
+      "name": "prueba 1",
+      "surname": "prueba 1",
+      "age": "69",
+      "id": "1VWM_HM"
     },
     {
       "name": "Andres",
       "surname": "Lopez",
-      "age": "25",
-      "id": "46-BT01"
-    },
-    {
-      "name": "Andres",
-      "surname": "Lopez",
-      "age": "13",
-      "id": "9LLNMSb"
-    },
-    {
-      "name": "prueba",
-      "surname": "prueba 2",
-      "age": "45",
-      "id": "sT0_23T"
+      "age": "36",
+      "id": "QCxsQRW"
     },
     {
       "name": "Juliana",
       "surname": "Mejia",
-      "age": "87",
-      "id": "qfxEVE7"
-    },
-    {
-      "name": "juliana",
-      "surname": "mejia",
-      "age": "22",
-      "id": "SV-i-G2"
-    },
-    {
-      "name": "Katerin Liseth Bland",
-      "surname": "Lopez Arias",
-      "age": "36",
-      "id": "TCADH47"
-    },
-    {
-      "name": "johan",
-      "surname": "lopez",
-      "age": "36",
-      "id": "jRppJUX"
-    },
-    {
-      "name": "karen",
-      "surname": "Gutierres",
-      "age": "69",
-      "id": "JkLeA_0"
+      "age": "26",
+      "id": "LwMogez"
     }
   ]
 }
